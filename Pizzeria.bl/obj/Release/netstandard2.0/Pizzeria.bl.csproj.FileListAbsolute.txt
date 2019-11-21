@@ -1,0 +1,8 @@
+D:\Liliia\Pizzeria.bl\bin\Release\netstandard2.0\Pizzeria.bl.deps.json
+D:\Liliia\Pizzeria.bl\bin\Release\netstandard2.0\Pizzeria.bl.dll
+D:\Liliia\Pizzeria.bl\bin\Release\netstandard2.0\Pizzeria.bl.pdb
+D:\Liliia\Pizzeria.bl\obj\Release\netstandard2.0\Pizzeria.bl.csprojAssemblyReference.cache
+D:\Liliia\Pizzeria.bl\obj\Release\netstandard2.0\Pizzeria.bl.AssemblyInfoInputs.cache
+D:\Liliia\Pizzeria.bl\obj\Release\netstandard2.0\Pizzeria.bl.AssemblyInfo.cs
+D:\Liliia\Pizzeria.bl\obj\Release\netstandard2.0\Pizzeria.bl.dll
+D:\Liliia\Pizzeria.bl\obj\Release\netstandard2.0\Pizzeria.bl.pdb
