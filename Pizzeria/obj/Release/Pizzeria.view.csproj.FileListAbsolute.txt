@@ -1,0 +1,15 @@
+D:\Liliia\Pizzeria\bin\Release\Pizzeria.exe.config
+D:\Liliia\Pizzeria\bin\Release\Pizzeria.exe
+D:\Liliia\Pizzeria\bin\Release\Pizzeria.pdb
+D:\Liliia\Pizzeria\bin\Release\Dapper.dll
+D:\Liliia\Pizzeria\bin\Release\Pizzeria.bl.dll
+D:\Liliia\Pizzeria\bin\Release\Pizzeria.bl.pdb
+D:\Liliia\Pizzeria\bin\Release\Dapper.xml
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.view.csprojAssemblyReference.cache
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.Category.resources
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.Main.resources
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.Properties.Resources.resources
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.view.csproj.GenerateResource.cache
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.view.csproj.CopyComplete
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.exe
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.pdb
