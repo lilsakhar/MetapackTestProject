@@ -13,3 +13,5 @@ D:\Liliia\Pizzeria\obj\Release\Pizzeria.view.csproj.GenerateResource.cache
 D:\Liliia\Pizzeria\obj\Release\Pizzeria.view.csproj.CopyComplete
 D:\Liliia\Pizzeria\obj\Release\Pizzeria.exe
 D:\Liliia\Pizzeria\obj\Release\Pizzeria.pdb
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.History.resources
+D:\Liliia\Pizzeria\obj\Release\Pizzeria.MailForm.resources

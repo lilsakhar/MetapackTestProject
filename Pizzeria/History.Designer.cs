@@ -137,7 +137,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "History";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "History";
+            this.Text = "Historia zamówień";
             this.Load += new System.EventHandler(this.History_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

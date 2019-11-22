@@ -87,7 +87,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 29);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -98,7 +98,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 29);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -109,7 +109,7 @@
             this.btnCalsel.Name = "btnCalsel";
             this.btnCalsel.Size = new System.Drawing.Size(83, 29);
             this.btnCalsel.TabIndex = 3;
-            this.btnCalsel.Text = "Cancel";
+            this.btnCalsel.Text = "Wyczyść";
             this.btnCalsel.UseVisualStyleBackColor = true;
             this.btnCalsel.Click += new System.EventHandler(this.btnCansel_Click);
             // 
@@ -120,7 +120,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 29);
             this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Szukaj";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.button4_Click);
             // 

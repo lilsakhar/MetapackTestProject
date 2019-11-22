@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Dapper;
+using Pizzeria.bl.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Windows.Forms;
-using Dapper;
-using Pizzeria.bl;
-using Pizzeria.bl.Model;
 
 namespace Pizzeria.DataAccess
 {
@@ -62,8 +60,8 @@ namespace Pizzeria.DataAccess
             using (var conn = connectionFactory.GetConnection())
             {
                 return conn.ExecuteScalar<byte[]>(
-                    "SELECT Picture FROM Kategoria WHERE Picture Is NOT NULL and ID_kategoria = @id",
-                    new {id = categoryId}
+                    "SELECT Picture FROM Kategoria WHERE ID_kategoria = @id",
+                    new { id = categoryId }
                 );
             }
         }
@@ -99,8 +97,8 @@ namespace Pizzeria.DataAccess
         }
 
         public void CreateOrder(
-                             string name, 
-                             string surname, 
+                             string name,
+                             string surname,
                              string email,
                              string notes
                              )
@@ -179,7 +177,7 @@ namespace Pizzeria.DataAccess
                 conn.Execute("CategoryDeleteByID", param, commandType: CommandType.StoredProcedure);
             }
         }
-            
+
 
         #endregion
 

@@ -39,6 +39,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblCena = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRazem = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblUwagi = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwOrder)).BeginInit();
@@ -88,14 +88,14 @@
             this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.History});
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.historyToolStripMenuItem.Text = "Historia";
             // 
             // History
             // 
             this.History.Name = "History";
-            this.History.Size = new System.Drawing.Size(184, 26);
-            this.History.Text = "Orders history";
+            this.History.Size = new System.Drawing.Size(224, 26);
+            this.History.Text = "Historia zamówień";
             this.History.Click += new System.EventHandler(this.History_Click);
             // 
             // tbCategory
@@ -190,6 +190,16 @@
             this.lblCena.Size = new System.Drawing.Size(24, 25);
             this.lblCena.TabIndex = 3;
             this.lblCena.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(726, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "zl";
             // 
             // lblRazem
             // 
@@ -297,16 +307,6 @@
             this.btnSend.Text = "Wysłać";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(726, 192);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "zl";
             // 
             // Main
             // 

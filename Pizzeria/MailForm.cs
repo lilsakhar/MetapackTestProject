@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Pizzeria.bl.MailModel;
+﻿using Pizzeria.bl.MailModel;
 using Pizzeria.bl.Model;
 using Pizzeria.DataAccess;
 using Pizzeria.MailServices;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace Pizzeria
@@ -24,7 +18,7 @@ namespace Pizzeria
         public MailForm()
         {
             mailRepository = new SendMailRepository();
-            repository = new  PizzeriaRepository(new ConnectionFactory());
+            repository = new PizzeriaRepository(new ConnectionFactory());
             InitializeComponent();
         }
 
@@ -39,12 +33,11 @@ namespace Pizzeria
             mailSettings.Ssl = chkSSL.Checked;
 
             MailParams mailParams = new MailParams();
-            
+
             mailParams.Totxt = txtTo.Text;
             mailParams.Cctxt = txtCC.Text;
             mailParams.Subject = txtSubject.Text;
             mailParams.Msgbody = txtMessage.Text;
-            
 
             try
             {
@@ -52,14 +45,12 @@ namespace Pizzeria
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
 
         private void MailForm_Load(object sender, EventArgs e)
         {
-
             try
             {
                 List<Zamowienie> zamHeader = repository.FillDataGridHistoryList();
@@ -67,23 +58,18 @@ namespace Pizzeria
                 //sortowanie po datach 
                 txtTo.Text = zamHeader[0].Email;
                 int id_zamowienia = zamHeader[0].ID_zamowienia;
-                txtSubject.Text = "Zamówienie N " + id_zamowienia;
+                txtSubject.Text = $"Zamówienie N {id_zamowienia}";
 
-
-                txtMessage.Text = "Dzień dobry, " + zamHeader[0].Klient +
-                                  " . Dziękujemy za zamówienie w naszej restauracii. \r\n"
+                txtMessage.Text = $"Dzień dobry, {zamHeader[0].Klient}. Dziękujemy za zamówienie w naszej restauracii. \r\n"
                                   + "Wasze zamówienie zostało wykonane: \r\n";
 
                 var list = repository.FillDataGridDetalsList(id_zamowienia);
                 foreach (Szczegoly s in list)
                 {
-                    txtMessage.Text += s.Nazwa_dania + ", cena: "
-                                                                 + s.Cena.ToString()
-                                                                 + ", ilość: " + s.Ilosc.ToString()
-                                                                 + " \r\n";
-                    
+                    txtMessage.Text += $"{s.Nazwa_dania}, cena: {s.Cena} zł, ilość: {s.Ilosc} \r\n";
                 }
-                txtMessage.Text += "\r\nCena zamówienia: " + zamHeader[0].Cena_zam.ToString();
+                txtMessage.Text += $"\r\nCena zamówienia: {zamHeader[0].Cena_zam.ToString()} zł\r\n";
+                txtMessage.Text += "\r\nSmacznego!";
             }
             catch (Exception ex)
             {

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
-using Pizzeria.bl;
-using System.IO;
-using System.Linq;
-using Pizzeria.bl.MailModel;
-using Pizzeria.bl.Model;
+﻿using Pizzeria.bl.Model;
 using Pizzeria.DataAccess;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Pizzeria
 {
@@ -29,16 +24,16 @@ namespace Pizzeria
             var list = repository.GetAllCategories();
             tabPageArray = new TabPage[list.Count];
             dataGridArray = new DataGridView[list.Count];
-            
+
             int i = 0;
             foreach (Kategoria k in list)
             {
                 string tabName = k.Nazwa_Kategoria;
                 TabPage tp = new TabPage(tabName);
-                
+
                 tbCategory.TabPages.Add(tp);
                 tp.Name = "TabPage" + i;
-  
+
                 tabPageArray[i] = tp;
 
                 DataGridView dataGridView = new DataGridView();
@@ -60,8 +55,8 @@ namespace Pizzeria
 
                 dataGridView.Columns[0].Visible = false;
                 dataGridView.Columns[3].Visible = false;
-                //dataGridView.Columns[2].HeaderText = "Nazwa";
-                //dataGridView.Columns[1].HeaderText = "Cena, zl";
+                dataGridView.Columns[1].HeaderText = "Nazwa";
+                dataGridView.Columns[2].HeaderText = "Cena, zł";
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
                 dataGridView.EnableHeadersVisualStyles = false;
                 dataGridView.Name = "DataGrid" + i;
@@ -86,9 +81,9 @@ namespace Pizzeria
         }
 
         void FillPictureBox(int id, PictureBox pb)
-        { 
+        {
             var pictureBytes = repository.GetPicture(id);
-            if (pictureBytes != null && pictureBytes.Length > 0)
+            if (pictureBytes != null && pictureBytes.Length > 0 && pictureBytes[0] != 0)
             {
                 var mem = new MemoryStream(pictureBytes);
                 pb.Image = Image.FromStream(mem);
@@ -97,15 +92,11 @@ namespace Pizzeria
         }
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Category f = new Category();    
-            f.ShowDialog();                 
-            f.Dispose();                    
+            Category f = new Category();
+            f.ShowDialog();
+            f.Dispose();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
@@ -133,7 +124,7 @@ namespace Pizzeria
                     }
                     i++;
                 }
-                        
+
                 dgwOrder.DataSource = repository.FillDataGridOrder();
                 dgwOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -216,10 +207,10 @@ namespace Pizzeria
 
         private void History_Click(object sender, EventArgs e)
         {
-            History h = new History();  
-            
-            h.ShowDialog();                 
-            h.Dispose();                    
+            History h = new History();
+
+            h.ShowDialog();
+            h.Dispose();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

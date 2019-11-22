@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using Pizzeria.DataAccess;
+using System;
 using System.Windows.Forms;
-using Dapper;
-using System.Configuration;
-using Pizzeria.bl;
-using System.IO;
-using Pizzeria.DataAccess;
 
 namespace Pizzeria
 {
@@ -28,18 +20,16 @@ namespace Pizzeria
         {
             try
             {
-                repository.AddCategory(ID_kategory,txtCategory.Text.Trim());
+                repository.AddCategory(ID_kategory, txtCategory.Text.Trim());
 
                 if (ID_kategory == 0)
-                    MessageBox.Show("Saved successfully", "Information"
+                    MessageBox.Show("Categoria została dodana", "Information"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Updated successfully", "Information"
+                    MessageBox.Show("Nazwa categorii została zmieniona", "Information"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    dgwKategory.DataSource = repository.FillDataGridView(txtSearch.Text); 
-                    dgwKategory.Columns[0].Visible = false;
-                    dgwKategory.Columns[2].Visible = false;
+                dgwKategory.DataSource = repository.FillDataGridView(txtSearch.Text);
                 Clear();
             }
             catch (Exception ex)
@@ -58,7 +48,7 @@ namespace Pizzeria
             {
                 MessageBox.Show(ex.Message);
             }
-                
+
         }
 
         private void Category_Load(object sender, EventArgs e)
@@ -84,7 +74,7 @@ namespace Pizzeria
         {
             txtCategory.Text = "";
             ID_kategory = 0;
-            btnAdd.Text = "Save";
+            btnAdd.Text = "Dodaj";
             btnDelete.Enabled = false;
 
         }
@@ -93,13 +83,12 @@ namespace Pizzeria
         {
             try
             {
-                if(dgwKategory.CurrentRow.Index != -1)
+                if (dgwKategory.CurrentRow.Index != -1)
                 {
                     ID_kategory = Convert.ToInt32(dgwKategory.CurrentRow.Cells[0].Value.ToString());
                     txtCategory.Text = dgwKategory.CurrentRow.Cells[1].Value.ToString();
-                    btnAdd.Text = "Update";
+                    btnAdd.Text = "Zmień";
                     btnDelete.Enabled = true;
-
                 }
             }
             catch (Exception ex)
@@ -112,29 +101,20 @@ namespace Pizzeria
         {
             try
             {
-                if(MessageBox.Show("Do you really want to delete this record?","Message",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Usunąć categorię?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     repository.DeleteCategory(ID_kategory);
                     Clear();
                     dgwKategory.DataSource = repository.FillDataGridView("");
-                    MessageBox.Show("Deleted successfully", "Information"
+                    MessageBox.Show("Categoria została usunięta", "Information"
                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            } 
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void dgwKategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
